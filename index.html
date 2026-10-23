@@ -1,0 +1,1460 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WE WILL WIN (WWW) | Huy Nguyen — Investor Relations & Engineering Operations</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & JetBrains Mono for Financial/Engineering Precision -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        slate: {
+                            850: '#131c2e',
+                            925: '#0b1120',
+                            950: '#060a12',
+                        },
+                        emerald: {
+                            450: '#10b981',
+                        },
+                        amber: {
+                            450: '#f59e0b',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Institutional Scrollbar & Grid Background */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0b1120;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }
+
+        .bg-engineering-grid {
+            background-size: 32px 32px;
+            background-image: 
+                linear-gradient(to right, rgba(148, 163, 184, 0.06) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(148, 163, 184, 0.06) 1px, transparent 1px);
+        }
+
+        /* Accounting double-underline for financial totals */
+        .accounting-underline {
+            border-bottom: 3px double currentColor;
+        }
+
+        @keyframes pulse-subtle {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.45; }
+        }
+        .animate-pulse-dot {
+            animation: pulse-subtle 2.2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans antialiased selection:bg-emerald-500 selection:text-white transition-colors duration-300 bg-engineering-grid min-h-screen flex flex-col">
+
+    <!-- ========================================== -->
+    <!-- TOP INSTITUTIONAL TELEMETRY & TICKER BAR   -->
+    <!-- ========================================== -->
+    <div class="bg-slate-900 text-slate-300 border-b border-slate-800 text-xs font-mono py-2 px-4">
+        <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+            <!-- Left: Live Ticker Data -->
+            <div class="flex flex-wrap items-center gap-x-5 gap-y-1">
+                <span class="inline-flex items-center gap-1.5 text-emerald-400 font-semibold">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse-dot"></span>
+                    TICKER: WWW (PRIVATE)
+                </span>
+                <span class="hidden sm:inline text-slate-500">|</span>
+                <span>AUTH SHARES: <strong class="text-white">1,000,000</strong></span>
+                <span class="hidden md:inline text-slate-500">|</span>
+                <span class="hidden md:inline">HQ: <strong class="text-white">HOUSTON, TX (USGC)</strong></span>
+                <span class="hidden lg:inline text-slate-500">|</span>
+                <span class="hidden lg:inline">SECTOR: <strong class="text-amber-400">FIXED EQUIP ENGR &amp; PERSONAL CAPITAL</strong></span>
+            </div>
+
+            <!-- Right: Security & Edge Status Badge -->
+            <div class="flex items-center gap-3 ml-auto">
+                <button onclick="openManualModal()" class="hover:text-emerald-400 transition-colors flex items-center gap-1.5 bg-slate-800/90 hover:bg-slate-800 px-2.5 py-1 rounded border border-slate-700 text-[11px]" title="Click to inspect site reliability & security architecture">
+                    <i class="fa-solid fa-shield-halved text-emerald-400"></i>
+                    <span>SYSTEM STATUS: ONLINE • HTTPS SECURED • ZERO-DB EDGE</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- STICKY NAVIGATION HEADER                   -->
+    <!-- ========================================== -->
+    <header class="sticky top-0 z-40 backdrop-blur-md bg-white/85 dark:bg-slate-925/85 border-b border-slate-200 dark:border-slate-800/90 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <!-- Brand Identity -->
+            <a href="#top" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-emerald-500 to-teal-700 flex items-center justify-center text-white font-mono font-bold text-base shadow-md shadow-emerald-500/20 group-hover:scale-105 transition-transform">
+                    WWW
+                </div>
+                <div>
+                    <div class="flex items-center gap-2">
+                        <span class="font-bold tracking-tight text-base text-slate-900 dark:text-white">WE WILL WIN</span>
+                        <span class="text-[10px] font-mono uppercase px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 font-semibold">wewillwin.me</span>
+                    </div>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 font-mono">Huy Nguyen • BSME &amp; Financial Analyst</p>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <nav class="hidden md:flex items-center gap-1 lg:gap-2 text-sm font-medium">
+                <a href="#executive-summary" class="px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-colors">Executive Summary</a>
+                <a href="#investor-relations" class="px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-colors flex items-center gap-1.5">
+                    <span>10-K / Financial Statements</span>
+                    <span class="text-[10px] font-mono bg-emerald-500/15 text-emerald-500 px-1.5 py-0.2 rounded">IR</span>
+                </a>
+                <a href="#engineering-ops" class="px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-colors">Engineering Ops</a>
+                <a href="#form-8k" class="px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-colors">8-K Life Filings</a>
+            </nav>
+
+            <!-- Action Controls (Owner's Manual + Theme Toggle + Mobile Menu Button) -->
+            <div class="flex items-center gap-2">
+                <button onclick="openManualModal()" class="hidden sm:inline-flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-mono font-medium bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/25 hover:bg-amber-500/20 transition-all">
+                    <i class="fa-solid fa-book-bookmark"></i>
+                    <span>Owner's Manual</span>
+                </button>
+
+                <button id="themeToggleBtn" onclick="toggleTheme()" aria-label="Toggle Light/Dark Mode" class="p-2.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 transition-colors">
+                    <i id="themeIcon" class="fa-solid fa-sun text-amber-400"></i>
+                </button>
+
+                <button onclick="toggleMobileMenu()" aria-label="Open Navigation Menu" class="md:hidden p-2.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Collapsible Navigation -->
+        <div id="mobileMenu" class="hidden md:hidden border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-4 pt-3 pb-4 space-y-2">
+            <a href="#executive-summary" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Executive Summary</a>
+            <a href="#investor-relations" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">10-K / Financial Statements (WWW)</a>
+            <a href="#engineering-ops" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Career &amp; Engineering Operations</a>
+            <a href="#form-8k" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Form 8-K Life Events</a>
+            <button onclick="toggleMobileMenu(); openManualModal();" class="w-full text-left px-3 py-2.5 rounded-lg text-xs font-mono font-semibold bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20 flex items-center gap-2">
+                <i class="fa-solid fa-book-bookmark"></i>
+                <span>Open Beginner's Owner Manual &amp; JSON Updater</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ========================================== -->
+    <!-- MAIN PORTAL CONTENT                        -->
+    <!-- ========================================== -->
+    <main id="top" class="flex-grow">
+
+        <!-- 1. HERO / EXECUTIVE SUMMARY SECTION -->
+        <section id="executive-summary" class="relative pt-10 pb-16 md:pt-16 md:pb-20 border-b border-slate-200 dark:border-slate-800/80">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                    <!-- Left Column: Institutional Pitch & Identity -->
+                    <div class="lg:col-span-7 space-y-6">
+                        <div class="inline-flex flex-wrap items-center gap-2 px-3 py-1.5 rounded-full bg-slate-200/80 dark:bg-slate-800/90 border border-slate-300 dark:border-slate-700 text-xs font-mono">
+                            <span class="px-2 py-0.5 rounded-full bg-emerald-500 text-slate-950 font-bold">CIK #0001999888</span>
+                            <span class="text-slate-700 dark:text-slate-300">HOUSTON PETROCHEMICAL CORRIDOR • PERSONAL HOLDING CORP</span>
+                        </div>
+
+                        <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.15]">
+                            Engineering Reliability Meets <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-teal-400">Institutional Capital Discipline.</span>
+                        </h1>
+
+                        <p class="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+                            Welcome to <strong class="text-slate-900 dark:text-white font-semibold">wewillwin.me</strong> — the official operational portal of <strong class="text-slate-900 dark:text-white font-semibold">Huy Nguyen</strong>, a Mechanical Engineer (BSME) and Financial Analyst in Greater Houston, TX. Through the <span class="font-mono text-emerald-600 dark:text-emerald-400 font-semibold">We Will Win (Ticker: WWW)</span> project, personal life milestones, career progression, and cash flows are managed with the transparency of a privately held enterprise with <strong>1,000,000 common shares</strong>.
+                        </p>
+
+                        <!-- Primary Call to Actions -->
+                        <div class="flex flex-wrap items-center gap-3 pt-2">
+                            <a href="#investor-relations" class="px-5 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-semibold text-sm shadow-lg shadow-emerald-500/20 transition-all flex items-center gap-2">
+                                <i class="fa-solid fa-file-invoice-dollar"></i>
+                                <span>Inspect Q3 Form 10-Q &amp; Financials</span>
+                            </a>
+                            <a href="#form-8k" class="px-5 py-3 rounded-xl bg-white dark:bg-slate-850 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-200 font-medium text-sm border border-slate-300 dark:border-slate-700 transition-all flex items-center gap-2">
+                                <i class="fa-solid fa-bolt text-amber-400"></i>
+                                <span>Read 8-K Life Filings</span>
+                            </a>
+                            <button onclick="openManualModal()" class="px-4 py-3 rounded-xl bg-slate-200/70 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono text-xs border border-slate-300 dark:border-slate-800 transition-all flex items-center gap-2">
+                                <i class="fa-solid fa-code text-emerald-500"></i>
+                                <span>How to Update Site (30s Guide)</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Executive Corporate Profile Card -->
+                    <div class="lg:col-span-5">
+                        <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xl overflow-hidden">
+                            <!-- Card Header -->
+                            <div class="bg-slate-900 text-white p-5 border-b border-slate-800 flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-11 h-11 rounded-xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400 font-mono font-bold text-lg">
+                                        HN
+                                    </div>
+                                    <div>
+                                        <h2 class="font-bold text-base tracking-tight">Huy Nguyen, BSME</h2>
+                                        <p class="text-xs font-mono text-emerald-400">CEO, Chief Engineer &amp; Sole Shareholder</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs font-mono px-2.5 py-1 rounded bg-slate-800 text-slate-300 border border-slate-700">
+                                    FY 2026
+                                </span>
+                            </div>
+
+                            <!-- Dual Core Competency Breakdown -->
+                            <div class="p-5 space-y-4 text-sm">
+                                <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-850/90 border border-slate-200/80 dark:border-slate-800">
+                                    <div class="flex items-center justify-between mb-1">
+                                        <span class="font-mono text-xs uppercase font-semibold text-amber-600 dark:text-amber-400 flex items-center gap-1.5">
+                                            <i class="fa-solid fa-industry"></i> Division I: Industrial Operations
+                                        </span>
+                                        <span class="text-[11px] font-mono text-slate-500">US Gulf Coast</span>
+                                    </div>
+                                    <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                                        Field Services &amp; Fixed Equipment Reliability Engineering (Ethylene Turnarounds, API 579 Fitness-For-Service, Pressure Vessels, Piping Stress &amp; Python Automation).
+                                    </p>
+                                </div>
+
+                                <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-850/90 border border-slate-200/80 dark:border-slate-800">
+                                    <div class="flex items-center justify-between mb-1">
+                                        <span class="font-mono text-xs uppercase font-semibold text-emerald-600 dark:text-emerald-400 flex items-center gap-1.5">
+                                            <i class="fa-solid fa-chart-pie"></i> Division II: Treasury &amp; Capital
+                                        </span>
+                                        <span class="text-[11px] font-mono text-slate-500">GAAP Framework</span>
+                                    </div>
+                                    <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                                        3-Statement Financial Modeling, GAAP Accrual Accounting, Indirect Cash Flow Reconciliation, Tax-Advantaged 401(k)/HSA Optimization, and Equity Research.
+                                    </p>
+                                </div>
+
+                                <!-- Quick Telemetry Table -->
+                                <div class="grid grid-cols-2 gap-2 pt-1 font-mono text-xs">
+                                    <div class="px-3 py-2 rounded-lg bg-slate-100 dark:bg-slate-800/60 flex justify-between">
+                                        <span class="text-slate-500">Alma Mater:</span>
+                                        <span class="font-semibold text-slate-900 dark:text-white">LSU (BSME)</span>
+                                    </div>
+                                    <div class="px-3 py-2 rounded-lg bg-slate-100 dark:bg-slate-800/60 flex justify-between">
+                                        <span class="text-slate-500">Domicile:</span>
+                                        <span class="font-semibold text-slate-900 dark:text-white">Houston, TX</span>
+                                    </div>
+                                    <div class="px-3 py-2 rounded-lg bg-slate-100 dark:bg-slate-800/60 flex justify-between">
+                                        <span class="text-slate-500">Authorized:</span>
+                                        <span class="font-semibold text-emerald-600 dark:text-emerald-400">1,000,000 Shs</span>
+                                    </div>
+                                    <div class="px-3 py-2 rounded-lg bg-slate-100 dark:bg-slate-800/60 flex justify-between">
+                                        <span class="text-slate-500">Audit Status:</span>
+                                        <span class="font-semibold text-emerald-600 dark:text-emerald-400">Balanced</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4-Card Institutional KPI Row -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
+                    <!-- KPI 1 -->
+                    <div class="bg-white dark:bg-slate-900 p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
+                        <div class="flex items-center justify-between text-xs font-mono text-slate-500 dark:text-slate-400 mb-2">
+                            <span>Q3 NET INCOME (GAAP)</span>
+                            <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-500 font-semibold">+37.6% Margin</span>
+                        </div>
+                        <div class="text-2xl sm:text-3xl font-bold font-mono text-slate-900 dark:text-white">$10,690.00</div>
+                        <div class="mt-2 text-xs text-slate-500 dark:text-slate-400 flex items-center justify-between font-mono">
+                            <span>Basic EPS (Q3):</span>
+                            <span class="text-emerald-600 dark:text-emerald-400 font-semibold">$0.0107 / share</span>
+                        </div>
+                    </div>
+
+                    <!-- KPI 2 -->
+                    <div class="bg-white dark:bg-slate-900 p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
+                        <div class="flex items-center justify-between text-xs font-mono text-slate-500 dark:text-slate-400 mb-2">
+                            <span>ENDING CASH &amp; LIQUIDITY</span>
+                            <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-500 font-semibold">Reconciled</span>
+                        </div>
+                        <div class="text-2xl sm:text-3xl font-bold font-mono text-slate-900 dark:text-white">$24,850.00</div>
+                        <div class="mt-2 text-xs text-slate-500 dark:text-slate-400 flex items-center justify-between font-mono">
+                            <span>Total Liquid + Invested:</span>
+                            <span class="text-slate-700 dark:text-slate-300 font-semibold">$91,470.00</span>
+                        </div>
+                    </div>
+
+                    <!-- KPI 3 -->
+                    <div class="bg-white dark:bg-slate-900 p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
+                        <div class="flex items-center justify-between text-xs font-mono text-slate-500 dark:text-slate-400 mb-2">
+                            <span>SHAREHOLDERS' EQUITY</span>
+                            <span class="px-2 py-0.5 rounded bg-blue-500/10 text-blue-500 font-semibold">APIC + R/E</span>
+                        </div>
+                        <div class="text-2xl sm:text-3xl font-bold font-mono text-slate-900 dark:text-white">$102,480.00</div>
+                        <div class="mt-2 text-xs text-slate-500 dark:text-slate-400 flex items-center justify-between font-mono">
+                            <span>Book Value / Share:</span>
+                            <span class="text-blue-500 font-semibold">$0.1025 / share</span>
+                        </div>
+                    </div>
+
+                    <!-- KPI 4 -->
+                    <div class="bg-white dark:bg-slate-900 p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
+                        <div class="flex items-center justify-between text-xs font-mono text-slate-500 dark:text-slate-400 mb-2">
+                            <span>ENGINEERING RELIABILITY</span>
+                            <span class="px-2 py-0.5 rounded bg-amber-500/10 text-amber-500 font-semibold">API 579 / FFS</span>
+                        </div>
+                        <div class="text-2xl sm:text-3xl font-bold font-mono text-slate-900 dark:text-white">99.98%</div>
+                        <div class="mt-2 text-xs text-slate-500 dark:text-slate-400 flex items-center justify-between font-mono">
+                            <span>Zero Loss-Time Incidents:</span>
+                            <span class="text-amber-500 font-semibold">Ethylene &amp; Fixed Equip</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ======================================================= -->
+        <!-- 2. INVESTOR RELATIONS: WE WILL WIN (WWW) 10-Q / 10-K    -->
+        <!-- ======================================================= -->
+        <section id="investor-relations" class="py-16 border-b border-slate-200 dark:border-slate-800/80">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <!-- Section Header -->
+                <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+                    <div>
+                        <div class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-emerald-600 dark:text-emerald-400 font-semibold mb-2">
+                            <i class="fa-solid fa-building-columns"></i>
+                            <span>SEC EDGAR STYLE CORPORATE DISCLOSURE • TICKER: WWW</span>
+                        </div>
+                        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white tracking-tight">
+                            We Will Win (WWW) — Investor Relations &amp; Financial Filings
+                        </h2>
+                        <p class="text-sm text-slate-600 dark:text-slate-400 mt-1 max-w-3xl">
+                            Running a life like a privately held company. All human capital revenues, living operating expenses (OpEx), vehicle depreciation, and retirement capital allocations are tracked across reconciled GAAP financial statements.
+                        </p>
+                    </div>
+
+                    <!-- Reporting Period Selector & Per-Share Toggle -->
+                    <div class="flex flex-wrap items-center gap-2">
+                        <div class="inline-flex rounded-xl bg-slate-200/80 dark:bg-slate-900 p-1 border border-slate-300 dark:border-slate-800 font-mono text-xs">
+                            <button onclick="switchReportingPeriod('Q3')" id="periodBtn-Q3" class="px-3 py-1.5 rounded-lg bg-emerald-500 text-slate-950 font-bold transition-all">
+                                Q3 10-Q (3M Ended)
+                            </button>
+                            <button onclick="switchReportingPeriod('FY')" id="periodBtn-FY" class="px-3 py-1.5 rounded-lg text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all">
+                                Annualized 10-K Run-Rate
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Share Valuation & EPS Simulator Bar -->
+                <div class="mb-8 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-5 shadow-sm">
+                    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+                        <div class="space-y-1 max-w-xl">
+                            <div class="flex items-center gap-2">
+                                <span class="text-xs font-mono uppercase px-2 py-0.5 rounded bg-emerald-500/15 text-emerald-500 font-semibold">Interactive Equity Calculator</span>
+                                <h3 class="text-sm font-bold text-slate-900 dark:text-white font-mono">1,000,000 Authorized Shares Valuation Model</h3>
+                            </div>
+                            <p class="text-xs text-slate-500 dark:text-slate-400">
+                                Adjust the implied P/E multiple or inspect your personal stake in <strong>We Will Win Corp.</strong> to see how engineering savings and investment compounding impact per-share intrinsic value.
+                            </p>
+                        </div>
+
+                        <!-- Slider & Live Readout -->
+                        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 flex-grow lg:max-w-2xl justify-end">
+                            <div class="flex-grow bg-slate-50 dark:bg-slate-850 p-3.5 rounded-xl border border-slate-200 dark:border-slate-800">
+                                <div class="flex justify-between text-xs font-mono mb-2">
+                                    <span class="text-slate-500">Implied Valuation Multiple (P/E):</span>
+                                    <span id="peMultipleLabel" class="font-bold text-emerald-500">15.0x Annualized Earnings</span>
+                                </div>
+                                <input id="peSlider" type="range" min="8" max="30" step="1" value="15" oninput="updateShareValuation()" class="w-full accent-emerald-500 cursor-pointer h-1.5 bg-slate-300 dark:bg-slate-700 rounded-lg">
+                                <div class="flex justify-between text-[10px] font-mono text-slate-400 mt-1">
+                                    <span>8x (Value Industrial)</span>
+                                    <span>15x (S&amp;P Historical)</span>
+                                    <span>30x (High-Growth Compounder)</span>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-2.5 sm:w-72 shrink-0 font-mono">
+                                <div class="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/25">
+                                    <div class="text-[10px] text-emerald-600 dark:text-emerald-400 uppercase">Implied Share Price</div>
+                                    <div id="impliedSharePrice" class="text-lg font-bold text-slate-900 dark:text-white mt-0.5">$0.6414</div>
+                                    <div class="text-[10px] text-slate-500">Book: $0.1025/sh</div>
+                                </div>
+                                <div class="p-3 rounded-xl bg-slate-100 dark:bg-slate-850 border border-slate-200 dark:border-slate-800">
+                                    <div class="text-[10px] text-slate-500 uppercase">Implied Market Cap</div>
+                                    <div id="impliedMarketCap" class="text-lg font-bold text-emerald-600 dark:text-emerald-400 mt-0.5">$641,400</div>
+                                    <div class="text-[10px] text-slate-500">1,000,000 Shares</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Financial Statement Navigation Tabs -->
+                <div class="border-b border-slate-200 dark:border-slate-800 mb-6">
+                    <div class="flex flex-wrap -mb-px gap-2 font-mono text-xs sm:text-sm" role="tablist">
+                        <button onclick="switchIRTab('tab-10k')" id="btn-tab-10k" class="ir-tab-btn inline-flex items-center gap-2 px-4 py-3 border-b-2 border-emerald-500 text-emerald-600 dark:text-emerald-400 font-semibold transition-all">
+                            <i class="fa-solid fa-file-contract"></i>
+                            <span>Form 10-Q / 10-K Executive Filing</span>
+                        </button>
+                        <button onclick="switchIRTab('tab-income-bs')" id="btn-tab-income-bs" class="ir-tab-btn inline-flex items-center gap-2 px-4 py-3 border-b-2 border-transparent text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 font-medium transition-all">
+                            <i class="fa-solid fa-scale-balanced"></i>
+                            <span>Income Statement &amp; Balance Sheet</span>
+                        </button>
+                        <button onclick="switchIRTab('tab-cashflow')" id="btn-tab-cashflow" class="ir-tab-btn inline-flex items-center gap-2 px-4 py-3 border-b-2 border-transparent text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 font-medium transition-all">
+                            <i class="fa-solid fa-money-bill-transfer"></i>
+                            <span>Indirect Cash Flow Statement</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- TAB PANEL A: FORM 10-K / 10-Q EXECUTIVE FILING -->
+                <div id="tab-10k" class="ir-tab-panel bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-lg overflow-hidden">
+                    <!-- Mock SEC Header Banner -->
+                    <div class="bg-slate-100 dark:bg-slate-850 p-6 border-b border-slate-200 dark:border-slate-800 font-mono">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                            <div>
+                                <div class="text-xs text-slate-500 uppercase">UNITED STATES PERSONAL CAPITAL &amp; ENGINEERING COMMISSION • HOUSTON, TX</div>
+                                <h3 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white mt-1">
+                                    FORM 10-Q / 10-K — WE WILL WIN CORPORATION (WWW)
+                                </h3>
+                                <p class="text-xs text-slate-600 dark:text-slate-400 mt-0.5">
+                                    Exact Name of Registrant as Specified in Its Charter: <strong>Huy Nguyen Personal Holding Enterprise</strong>
+                                </p>
+                            </div>
+                            <div class="flex flex-col sm:items-end text-xs space-y-1">
+                                <span class="px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 font-semibold">
+                                    SHARES OUTSTANDING: 1,000,000 COMMON ($0.01 PAR)
+                                </span>
+                                <span class="text-slate-500">Audit Verification: Assets = Liabilities + Equity</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Filing Narrative Sections -->
+                    <div class="p-6 sm:p-8 space-y-8 text-sm leading-relaxed text-slate-700 dark:text-slate-300">
+                        <!-- Item 1 -->
+                        <div class="space-y-2">
+                            <h4 class="font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400 font-bold">
+                                ITEM 1. BUSINESS &amp; CORPORATE STRUCTURE
+                            </h4>
+                            <p>
+                                <strong>We Will Win ("WWW" or the "Company")</strong> operates as a personal corporate framework headquartered in the Greater Houston, Texas metropolitan area. Rather than viewing personal finances through informal budgeting, WWW treats the life and career of <strong>Huy Nguyen</strong> as an institutional operating company with <strong>1,000,000 authorized and issued shares of common stock</strong> ($0.01 par value, $10,000.00 stated common capital, and $55,400.00 in Additional Paid-In Capital contributed from prior career equity accumulation).
+                            </p>
+                            <p>
+                                Core operating revenues are generated by deploying high-reliability Mechanical Engineering talent (BSME, Louisiana State University) into mission-critical petrochemical and refining infrastructure along the U.S. Gulf Coast, supplemented by disciplined capital allocation into equities, tax-advantaged retirement vehicles, and liquid money market instruments.
+                            </p>
+                        </div>
+
+                        <!-- Item 1A -->
+                        <div class="space-y-3">
+                            <h4 class="font-mono text-xs uppercase tracking-wider text-amber-600 dark:text-amber-400 font-bold">
+                                ITEM 1A. RISK FACTORS &amp; MITIGATION CONTROLS
+                            </h4>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-800">
+                                    <div class="font-mono text-xs font-bold text-slate-900 dark:text-white mb-1">1. Industrial &amp; Turnaround Fatigue Risk</div>
+                                    <p class="text-xs text-slate-600 dark:text-slate-400">
+                                        High-intensity field engineering execution in ethylene and petrochemical units carries physical fatigue risk. <em>Mitigation:</em> Strict preventative health routines, sleep telemetry, and ergonomic work boundaries.
+                                    </p>
+                                </div>
+                                <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-800">
+                                    <div class="font-mono text-xs font-bold text-slate-900 dark:text-white mb-1">2. Lifestyle Creep &amp; Fixed OpEx Inflation</div>
+                                    <p class="text-xs text-slate-600 dark:text-slate-400">
+                                        Rising income often induces proportional consumption growth. <em>Mitigation:</em> Enforcing quarterly GAAP Income Statement reviews and targeting a minimum 35%+ net savings/reinvestment margin.
+                                    </p>
+                                </div>
+                                <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-800">
+                                    <div class="font-mono text-xs font-bold text-slate-900 dark:text-white mb-1">3. Market &amp; Sequence-of-Returns Risk</div>
+                                    <p class="text-xs text-slate-600 dark:text-slate-400">
+                                        Equity volatility impacts non-operating mark-to-market gains. <em>Mitigation:</em> Maintaining $24,850+ in high-yield liquid cash equivalents and dollar-cost averaging into broad index and high-conviction positions.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Item 7 -->
+                        <div class="space-y-2">
+                            <h4 class="font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400 font-bold">
+                                ITEM 7. MANAGEMENT'S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION (MD&amp;A)
+                            </h4>
+                            <p>
+                                During the most recent fiscal quarter, WWW transitioned its primary human capital deployment toward <strong>Field Services Engineering (Ethylene Unit Operations)</strong> while expanding internal Python engineering automation capabilities. Operating cash flows remained exceptionally resilient, generating <strong>$10,690.00 in quarterly GAAP Net Income</strong> ($0.0107 EPS) on $28,450.00 of total top-line inflows.
+                            </p>
+                            <p>
+                                On the Balance Sheet, physical Property, Plant &amp; Equipment (Transportation Vehicle Fleet &amp; Workstation Hardware) is systematically depreciated at $750.00 per quarter to reflect true economic replacement cost. Total Shareholders' Equity expanded to <strong>$102,480.00 ($0.1025 Book Value Per Share)</strong> with zero high-interest consumer debt.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB PANEL B: INCOME STATEMENT & BALANCE SHEET -->
+                <div id="tab-income-bs" class="ir-tab-panel hidden space-y-8">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        
+                        <!-- LEFT: CONSOLIDATED STATEMENT OF OPERATIONS (INCOME STATEMENT) -->
+                        <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-lg overflow-hidden">
+                            <div class="p-5 bg-slate-100 dark:bg-slate-850 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
+                                <div>
+                                    <span class="text-[11px] font-mono uppercase text-emerald-600 dark:text-emerald-400 font-bold">CONSOLIDATED STATEMENT OF OPERATIONS</span>
+                                    <h3 class="text-base font-bold text-slate-900 dark:text-white">Income Statement (in $ USD, except per share)</h3>
+                                </div>
+                                <span id="isPeriodBadge" class="text-xs font-mono px-2.5 py-1 rounded bg-emerald-500/15 text-emerald-500 font-semibold">Q3 (3M Ended)</span>
+                            </div>
+
+                            <div class="p-5 overflow-x-auto">
+                                <table class="w-full text-xs sm:text-sm font-mono">
+                                    <thead>
+                                        <tr class="border-b border-slate-200 dark:border-slate-800 text-slate-500 text-left">
+                                            <th class="pb-2 font-semibold">Line Item</th>
+                                            <th class="pb-2 text-right font-semibold">Amount ($ USD)</th>
+                                            <th class="pb-2 text-right font-semibold">% Rev</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="incomeStatementBody" class="divide-y divide-slate-200/60 dark:divide-slate-800/60">
+                                        <!-- Dynamically populated by JS based on Q3 vs Annualized toggle -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- RIGHT: CONSOLIDATED BALANCE SHEET -->
+                        <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-lg overflow-hidden">
+                            <div class="p-5 bg-slate-100 dark:bg-slate-850 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
+                                <div>
+                                    <span class="text-[11px] font-mono uppercase text-blue-600 dark:text-blue-400 font-bold">STATEMENT OF FINANCIAL POSITION</span>
+                                    <h3 class="text-base font-bold text-slate-900 dark:text-white">Balance Sheet (1,000,000 Shares Issued)</h3>
+                                </div>
+                                <span class="text-xs font-mono px-2.5 py-1 rounded bg-blue-500/15 text-blue-500 font-semibold">A = L + E Verified</span>
+                            </div>
+
+                            <div class="p-5 overflow-x-auto">
+                                <table class="w-full text-xs sm:text-sm font-mono">
+                                    <tbody class="divide-y divide-slate-200/60 dark:divide-slate-800/60">
+                                        <!-- ASSETS -->
+                                        <tr class="bg-slate-50 dark:bg-slate-850/70">
+                                            <td colspan="2" class="py-2 px-2 font-bold text-emerald-600 dark:text-emerald-400 uppercase text-xs">ASSETS</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-2 pl-3">Cash &amp; High-Yield Cash Equivalents</td>
+                                            <td class="py-2 text-right font-semibold">$24,850.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-2 pl-3">Marketable Securities (Brokerage Portfolio)</td>
+                                            <td class="py-2 text-right">$28,200.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-2 pl-3">Prepaid Expenses &amp; Security Deposits</td>
+                                            <td class="py-2 text-right">$1,850.00</td>
+                                        </tr>
+                                        <tr class="font-semibold bg-slate-50/50 dark:bg-slate-850/30">
+                                            <td class="py-2 pl-3">Total Current Assets</td>
+                                            <td class="py-2 text-right">$54,900.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-2 pl-3">Long-Term Retirement Assets (401k / Roth / HSA)</td>
+                                            <td class="py-2 text-right">$38,420.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-2 pl-3">Property, Plant &amp; Equip (Vehicle &amp; Rig Gross)</td>
+                                            <td class="py-2 text-right">$22,500.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-2 pl-3 text-rose-500">Less: Accumulated Depreciation</td>
+                                            <td class="py-2 text-right text-rose-500">($6,750.00)</td>
+                                        </tr>
+                                        <tr class="font-bold text-slate-900 dark:text-white bg-emerald-500/5">
+                                            <td class="py-2.5 pl-2">TOTAL ASSETS</td>
+                                            <td class="py-2.5 text-right accounting-underline text-emerald-600 dark:text-emerald-400">$109,070.00</td>
+                                        </tr>
+
+                                        <!-- LIABILITIES & SHAREHOLDERS' EQUITY -->
+                                        <tr class="bg-slate-50 dark:bg-slate-850/70">
+                                            <td colspan="2" class="py-2 px-2 font-bold text-amber-600 dark:text-amber-400 uppercase text-xs pt-4">LIABILITIES &amp; SHAREHOLDERS' EQUITY</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-2 pl-3">Accounts Payable &amp; Credit Card Float (Paid Monthly)</td>
+                                            <td class="py-2 text-right">$1,420.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-2 pl-3">Equipment Financing Note Payable</td>
+                                            <td class="py-2 text-right">$5,170.00</td>
+                                        </tr>
+                                        <tr class="font-semibold bg-slate-50/50 dark:bg-slate-850/30">
+                                            <td class="py-2 pl-3">Total Liabilities</td>
+                                            <td class="py-2 text-right">$6,590.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-2 pl-3">Common Stock ($0.01 Par, 1,000,000 Shares Issued)</td>
+                                            <td class="py-2 text-right">$10,000.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-2 pl-3">Additional Paid-In Capital (APIC)</td>
+                                            <td class="py-2 text-right">$55,400.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-2 pl-3">Retained Earnings (Cumulative Net Surplus)</td>
+                                            <td class="py-2 text-right">$37,080.00</td>
+                                        </tr>
+                                        <tr class="font-semibold bg-slate-50/50 dark:bg-slate-850/30">
+                                            <td class="py-2 pl-3">Total Shareholders' Equity (Book Value: $0.1025/sh)</td>
+                                            <td class="py-2 text-right text-emerald-600 dark:text-emerald-400">$102,480.00</td>
+                                        </tr>
+                                        <tr class="font-bold text-slate-900 dark:text-white bg-emerald-500/5">
+                                            <td class="py-2.5 pl-2">TOTAL LIABILITIES &amp; SHAREHOLDERS' EQUITY</td>
+                                            <td class="py-2.5 text-right accounting-underline text-emerald-600 dark:text-emerald-400">$109,070.00</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- TAB PANEL C: INDIRECT STATEMENT OF CASH FLOWS -->
+                <div id="tab-cashflow" class="ir-tab-panel hidden bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-lg overflow-hidden">
+                    <div class="p-6 bg-slate-100 dark:bg-slate-850 border-b border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                        <div>
+                            <span class="text-xs font-mono uppercase text-emerald-600 dark:text-emerald-400 font-bold">CONSOLIDATED STATEMENT OF CASH FLOWS (INDIRECT METHOD)</span>
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white">Reconciliation of GAAP Net Income to Ending Cash Balance</h3>
+                        </div>
+                        <span class="text-xs font-mono px-3 py-1.5 rounded-lg bg-emerald-500/15 text-emerald-500 font-semibold border border-emerald-500/20">
+                            Matches Balance Sheet Cash: $24,850.00
+                        </span>
+                    </div>
+
+                    <div class="p-6 overflow-x-auto">
+                        <table class="w-full max-w-4xl mx-auto text-xs sm:text-sm font-mono">
+                            <tbody class="divide-y divide-slate-200/70 dark:divide-slate-800/70">
+                                <tr class="bg-slate-50 dark:bg-slate-850">
+                                    <td class="py-2.5 px-3 font-bold text-emerald-600 dark:text-emerald-400">OPERATING ACTIVITIES</td>
+                                    <td class="py-2.5 px-3 text-right font-bold">Q3 (3M Ended)</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2.5 pl-5 font-semibold">Net Income (Per Consolidated Statement of Operations)</td>
+                                    <td class="py-2.5 pr-3 text-right font-bold text-emerald-600 dark:text-emerald-400">$10,690.00</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="py-1.5 pl-5 text-xs text-slate-500 italic">Adjustments to reconcile Net Income to Net Cash Provided by Operating Activities:</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 pl-8">(+) Depreciation &amp; Amortization (Non-Cash Vehicle/PPE Charge)</td>
+                                    <td class="py-2 pr-3 text-right">$750.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 pl-8">(-) Non-Cash Employer 401(k) Match &amp; Reinvested Dividends</td>
+                                    <td class="py-2 pr-3 text-right text-rose-500">($2,250.00)</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 pl-8">(+) Change in Working Capital (Accounts Payable / Credit Float / Prepaids)</td>
+                                    <td class="py-2 pr-3 text-right">$160.00</td>
+                                </tr>
+                                <tr class="font-bold bg-slate-50/70 dark:bg-slate-850/40">
+                                    <td class="py-2.5 pl-5">Net Cash Provided by Operating Activities</td>
+                                    <td class="py-2.5 pr-3 text-right text-emerald-600 dark:text-emerald-400">$9,350.00</td>
+                                </tr>
+
+                                <!-- INVESTING ACTIVITIES -->
+                                <tr class="bg-slate-50 dark:bg-slate-850">
+                                    <td colspan="2" class="py-2.5 px-3 font-bold text-blue-500 pt-4">INVESTING ACTIVITIES</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 pl-8">(-) Employee Payroll Contributions to 401(k) / Roth IRA / HSA</td>
+                                    <td class="py-2 pr-3 text-right text-rose-500">($3,400.00)</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 pl-8">(-) Net Purchases of Marketable Equities (Brokerage Allocations)</td>
+                                    <td class="py-2 pr-3 text-right text-rose-500">($2,000.00)</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 pl-8">(-) Capital Expenditures (Workstation &amp; Field Gear Upgrades)</td>
+                                    <td class="py-2 pr-3 text-right text-rose-500">($350.00)</td>
+                                </tr>
+                                <tr class="font-bold bg-slate-50/70 dark:bg-slate-850/40">
+                                    <td class="py-2.5 pl-5">Net Cash Used in Investing Activities</td>
+                                    <td class="py-2.5 pr-3 text-right text-rose-500">($5,750.00)</td>
+                                </tr>
+
+                                <!-- FINANCING ACTIVITIES -->
+                                <tr class="bg-slate-50 dark:bg-slate-850">
+                                    <td colspan="2" class="py-2.5 px-3 font-bold text-amber-500 pt-4">FINANCING ACTIVITIES</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 pl-8">(-) Principal Reductions on Equipment Financing Note</td>
+                                    <td class="py-2 pr-3 text-right text-rose-500">($600.00)</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 pl-8">Common Stock Issuance / Share Repurchases (1,000,000 Shares Fixed)</td>
+                                    <td class="py-2 pr-3 text-right">$0.00</td>
+                                </tr>
+                                <tr class="font-bold bg-slate-50/70 dark:bg-slate-850/40">
+                                    <td class="py-2.5 pl-5">Net Cash Used in Financing Activities</td>
+                                    <td class="py-2.5 pr-3 text-right text-rose-500">($600.00)</td>
+                                </tr>
+
+                                <!-- RECONCILIATION SUMMARY -->
+                                <tr class="font-bold text-slate-900 dark:text-white bg-emerald-500/10">
+                                    <td class="py-3 pl-3">NET INCREASE IN CASH &amp; CASH EQUIVALENTS FOR PERIOD</td>
+                                    <td class="py-3 pr-3 text-right text-emerald-600 dark:text-emerald-400">+$3,000.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2.5 pl-3 text-slate-500">Cash &amp; Cash Equivalents at Beginning of Quarter</td>
+                                    <td class="py-2.5 pr-3 text-right">$21,850.00</td>
+                                </tr>
+                                <tr class="font-bold text-base text-slate-900 dark:text-white bg-emerald-500/15">
+                                    <td class="py-3 pl-3">CASH &amp; CASH EQUIVALENTS AT END OF QUARTER</td>
+                                    <td class="py-3 pr-3 text-right accounting-underline text-emerald-600 dark:text-emerald-400">$24,850.00</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ======================================================= -->
+        <!-- 3. CAREER PROGRESSION & ENGINEERING OPERATIONS (CAPEX)  -->
+        <!-- ======================================================= -->
+        <section id="engineering-ops" class="py-16 border-b border-slate-200 dark:border-slate-800/80">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="mb-10">
+                    <div class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-amber-600 dark:text-amber-400 font-semibold mb-2">
+                        <i class="fa-solid fa-helmet-safety"></i>
+                        <span>HUMAN CAPITAL R&amp;D • US GULF COAST PETROCHEMICAL CORRIDOR</span>
+                    </div>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white tracking-tight">
+                        Career Progression &amp; Industrial Engineering Operations
+                    </h2>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 mt-1 max-w-3xl">
+                        Every engineering role strengthens the top-line earnings power and technical moat of <strong>We Will Win (WWW)</strong>. Combining hands-on field execution with API mechanical integrity analysis and Python data automation.
+                    </p>
+                </div>
+
+                <!-- Interactive Timeline Cards -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    
+                    <!-- Milestone 1: Field Services Engineering -->
+                    <div class="bg-white dark:bg-slate-900 rounded-2xl border-2 border-emerald-500/60 dark:border-emerald-500/50 p-6 shadow-lg flex flex-col justify-between relative">
+                        <div>
+                            <div class="flex items-center justify-between gap-2 mb-4">
+                                <span class="px-2.5 py-1 rounded-md bg-emerald-500 text-slate-950 font-mono font-bold text-xs">
+                                    ACTIVE • FIELD OPS
+                                </span>
+                                <span class="text-xs font-mono text-slate-500">Greater Houston / USGC</span>
+                            </div>
+
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white">
+                                Field Services Engineer — Ethylene Unit &amp; Turnaround Execution
+                            </h3>
+                            <p class="text-xs font-mono text-emerald-600 dark:text-emerald-400 mt-1 mb-3">
+                                WWW Division: Primary Operating Revenue Engine
+                            </p>
+
+                            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+                                Leading critical path mechanical execution in high-severity Ethylene cracking and olefin processing units. Bridging office engineering specifications with real-time field fabrication, hydrotesting, flange management, and turnaround schedules.
+                            </p>
+
+                            <ul class="space-y-2 text-xs text-slate-600 dark:text-slate-300 font-mono">
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-check text-emerald-500 mt-0.5"></i>
+                                    <span>Critical-path field troubleshooting for furnaces, exchangers &amp; piping systems</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-check text-emerald-500 mt-0.5"></i>
+                                    <span>Turnaround (TAR) quality assurance, weld inspection packages &amp; safety leadership</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="mt-6 pt-4 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between text-xs font-mono">
+                            <span class="text-slate-500">WWW ROI Impact:</span>
+                            <span class="text-emerald-500 font-semibold">+Top-Line Cash Flow Expansion</span>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 2: Fixed Equipment Reliability Engineer -->
+                    <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 shadow-md flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between gap-2 mb-4">
+                                <span class="px-2.5 py-1 rounded-md bg-amber-500/15 text-amber-600 dark:text-amber-400 border border-amber-500/30 font-mono font-bold text-xs">
+                                    CORE SPECIALIZATION
+                                </span>
+                                <span class="text-xs font-mono text-slate-500">Petrochemical / Refining</span>
+                            </div>
+
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white">
+                                Fixed Equipment Reliability Engineer
+                            </h3>
+                            <p class="text-xs font-mono text-amber-600 dark:text-amber-400 mt-1 mb-3">
+                                WWW Division: Technical Moat &amp; Python Automation R&amp;D
+                            </p>
+
+                            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+                                Executed structural and mechanical integrity evaluations across pressure vessels, heat exchangers, storage tanks, and process piping networks. Built automated Python scripts to accelerate inspection data parsing and remaining-life calculations.
+                            </p>
+
+                            <ul class="space-y-2 text-xs text-slate-600 dark:text-slate-300 font-mono">
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-gear text-amber-500 mt-0.5"></i>
+                                    <span>API 579-1 / ASME FFS-1 Fitness-For-Service Level 1 &amp; 2 assessments</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-gear text-amber-500 mt-0.5"></i>
+                                    <span>ASME Section VIII Div. 1, API 510 / 570 / 653 &amp; pipe stress analysis</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="mt-6 pt-4 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between text-xs font-mono">
+                            <span class="text-slate-500">WWW Asset Class:</span>
+                            <span class="text-amber-500 font-semibold">High-Barrier Intellectual Capital</span>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 3: LSU BSME & Financial Modeling Foundation -->
+                    <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 shadow-md flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between gap-2 mb-4">
+                                <span class="px-2.5 py-1 rounded-md bg-blue-500/15 text-blue-600 dark:text-blue-400 border border-blue-500/30 font-mono font-bold text-xs">
+                                    FOUNDATION CAPEX
+                                </span>
+                                <span class="text-xs font-mono text-slate-500">Baton Rouge, LA → Houston, TX</span>
+                            </div>
+
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white">
+                                B.S. in Mechanical Engineering (LSU) &amp; Quantitative Finance
+                            </h3>
+                            <p class="text-xs font-mono text-blue-600 dark:text-blue-400 mt-1 mb-3">
+                                WWW Division: Initial Charter &amp; 1,000,000 Share Capitalization
+                            </p>
+
+                            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+                                Graduated from Louisiana State University with a Bachelor of Science in Mechanical Engineering. Applied rigorous thermodynamics, solid mechanics, and numerical methods directly to corporate accounting and equity valuation.
+                            </p>
+
+                            <ul class="space-y-2 text-xs text-slate-600 dark:text-slate-300 font-mono">
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-graduation-cap text-blue-500 mt-0.5"></i>
+                                    <span>Thermodynamics, Fluid Mechanics, Materials Science &amp; FEA Modeling</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-chart-line text-blue-500 mt-0.5"></i>
+                                    <span>Chartered the We Will Win (WWW) 3-Statement GAAP Personal Ledger</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="mt-6 pt-4 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between text-xs font-mono">
+                            <span class="text-slate-500">Initial Seed Equity:</span>
+                            <span class="text-blue-500 font-semibold">1,000,000 Common Shares</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================================================= -->
+        <!-- 4. MAJOR LIFE EVENTS & PRESS RELEASES (FORM 8-K FEED)   -->
+        <!-- ======================================================= -->
+        <section id="form-8k" class="py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <!-- Header & Category Filters -->
+                <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+                    <div>
+                        <div class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-emerald-600 dark:text-emerald-400 font-semibold mb-2">
+                            <i class="fa-solid fa-tower-broadcast"></i>
+                            <span>FORM 8-K CURRENT REPORTS • MATERIAL LIFE &amp; CAREER DISCLOSURES</span>
+                        </div>
+                        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white tracking-tight">
+                            Major Life Events &amp; Corporate Press Releases
+                        </h2>
+                        <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">
+                            Whenever a material life milestone, career transition, or quarterly report occurs, it is filed here as a timestamped Form 8-K disclosure.
+                        </p>
+                    </div>
+
+                    <!-- Category Filter Buttons -->
+                    <div class="flex flex-wrap items-center gap-1.5 font-mono text-xs">
+                        <button onclick="filter8K('ALL')" data-filter="ALL" class="filter-8k-btn px-3 py-1.5 rounded-lg bg-emerald-500 text-slate-950 font-bold transition-all">
+                            All Filings
+                        </button>
+                        <button onclick="filter8K('CAREER')" data-filter="CAREER" class="filter-8k-btn px-3 py-1.5 rounded-lg bg-slate-200 dark:bg-slate-850 text-slate-700 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-800 transition-all">
+                            Career Ops
+                        </button>
+                        <button onclick="filter8K('LIFE')" data-filter="LIFE" class="filter-8k-btn px-3 py-1.5 rounded-lg bg-slate-200 dark:bg-slate-850 text-slate-700 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-800 transition-all">
+                            Life Milestones
+                        </button>
+                        <button onclick="filter8K('FINANCIAL')" data-filter="FINANCIAL" class="filter-8k-btn px-3 py-1.5 rounded-lg bg-slate-200 dark:bg-slate-850 text-slate-700 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-800 transition-all">
+                            Financial Filings
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Dynamic 8-K Cards Container (Rendered from the simple JSON array in JS) -->
+                <div id="filings8KContainer" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Populated via JavaScript from WWW_SITE_DATA.lifeEvents8K -->
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ========================================== -->
+    <!-- BEGINNER-FRIENDLY OWNER'S MANUAL MODAL     -->
+    <!-- ========================================== -->
+    <div id="manualModal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl max-w-4xl w-full max-h-[90vh] flex flex-col shadow-2xl overflow-hidden my-auto">
+            
+            <!-- Modal Header -->
+            <div class="p-5 bg-slate-900 text-white border-b border-slate-800 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="w-9 h-9 rounded-lg bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-amber-400">
+                        <i class="fa-solid fa-shield-cat"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-base">wewillwin.me — Beginner's Owner Manual &amp; Security Architecture</h3>
+                        <p class="text-xs font-mono text-slate-400">Zero-Database Static Edge Architecture • Built for 100% Reliability &amp; 30-Second Updates</p>
+                    </div>
+                </div>
+                <button onclick="closeManualModal()" class="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+
+            <!-- Modal Body -->
+            <div class="p-6 overflow-y-auto space-y-6 text-sm text-slate-700 dark:text-slate-300">
+                
+                <!-- 1. Why This Architecture Is Bulletproof -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="p-4 rounded-xl bg-emerald-500/5 border border-emerald-500/20">
+                        <div class="font-mono text-xs font-bold text-emerald-600 dark:text-emerald-400 mb-1 flex items-center gap-1.5">
+                            <i class="fa-solid fa-lock"></i> 1. Immune to SQL &amp; DB Hacks
+                        </div>
+                        <p class="text-xs text-slate-600 dark:text-slate-400">
+                            WordPress and database sites get hacked because attackers exploit login forms or SQL databases. Because this site is <strong>100% pure static HTML/JS</strong>, there is no database to breach and zero server plugins that can break.
+                        </p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-blue-500/5 border border-blue-500/20">
+                        <div class="font-mono text-xs font-bold text-blue-600 dark:text-blue-400 mb-1 flex items-center gap-1.5">
+                            <i class="fa-solid fa-server"></i> 2. 99.99% Uptime on GitHub Pages
+                        </div>
+                        <p class="text-xs text-slate-600 dark:text-slate-400">
+                            Host this single <code>index.html</code> file for free on GitHub Pages or Cloudflare Pages connected to <strong>wewillwin.me</strong>. Automatic Let's Encrypt SSL/HTTPS certificates keep your visitors encrypted at $0/month hosting cost.
+                        </p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-amber-500/5 border border-amber-500/20">
+                        <div class="font-mono text-xs font-bold text-amber-600 dark:text-amber-400 mb-1 flex items-center gap-1.5">
+                            <i class="fa-solid fa-bolt"></i> 3. 30-Second JSON Updates
+                        </div>
+                        <p class="text-xs text-slate-600 dark:text-slate-400">
+                            You never have to touch complicated HTML tags to post a new life event. Use the interactive generator below to create a new Form 8-K life milestone and either preview it live or copy the snippet into the file!
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 2. Interactive 8-K Life Event Generator & Live Previewer -->
+                <div class="p-5 rounded-2xl bg-slate-100 dark:bg-slate-850 border border-slate-200 dark:border-slate-800 space-y-4">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                        <div>
+                            <h4 class="font-bold text-slate-900 dark:text-white font-mono text-sm">
+                                <i class="fa-solid fa-wand-magic-sparkles text-emerald-500 mr-1.5"></i>
+                                Interactive Form 8-K Life Event Generator
+                            </h4>
+                            <p class="text-xs text-slate-500 dark:text-slate-400">
+                                Fill out the boxes below to test adding a new life event to the page immediately, and generate the ready-to-copy JSON code block.
+                            </p>
+                        </div>
+                        <span id="copyConfirmBadge" class="hidden text-xs font-mono px-2.5 py-1 rounded bg-emerald-500 text-slate-950 font-bold">
+                            Copied to Clipboard!
+                        </span>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs font-mono">
+                        <div>
+                            <label class="block text-slate-500 mb-1">Filing Category</label>
+                            <select id="genCategory" onchange="updateGeneratorSnippet()" class="w-full px-3 py-2 rounded-lg bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white">
+                                <option value="LIFE">LIFE (Life Milestone)</option>
+                                <option value="CAREER">CAREER (Career Progression)</option>
+                                <option value="FINANCIAL">FINANCIAL (10-Q / 10-K Release)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-slate-500 mb-1">SEC Item Code</label>
+                            <input id="genItemCode" type="text" value="Item 8.01 — Other Material Events" oninput="updateGeneratorSnippet()" class="w-full px-3 py-2 rounded-lg bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white">
+                        </div>
+                        <div>
+                            <label class="block text-slate-500 mb-1">Date</label>
+                            <input id="genDate" type="text" value="Q4 2026" oninput="updateGeneratorSnippet()" class="w-full px-3 py-2 rounded-lg bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs font-mono">
+                        <div>
+                            <label class="block text-slate-500 mb-1">Headline / Event Title</label>
+                            <input id="genTitle" type="text" value="Completed Major Ethylene Turnaround &amp; Portfolio Milestone" oninput="updateGeneratorSnippet()" class="w-full px-3 py-2 rounded-lg bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white">
+                        </div>
+                        <div>
+                            <label class="block text-slate-500 mb-1">Financial / Balance Sheet Impact Tag</label>
+                            <input id="genImpact" type="text" value="Retained Earnings +$4,500 • Zero Safety Incidents" oninput="updateGeneratorSnippet()" class="w-full px-3 py-2 rounded-lg bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white">
+                        </div>
+                    </div>
+
+                    <div class="text-xs font-mono">
+                        <label class="block text-slate-500 mb-1">Executive Summary Paragraph</label>
+                        <textarea id="genSummary" rows="2" oninput="updateGeneratorSnippet()" class="w-full px-3 py-2 rounded-lg bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white">Successfully executed field engineering turnaround deliverables ahead of schedule while expanding WWW total shareholders' equity past key quarterly targets.</textarea>
+                    </div>
+
+                    <!-- Generated Code Block -->
+                    <div class="relative">
+                        <pre id="generatedJsonCode" class="p-4 rounded-xl bg-slate-950 text-emerald-400 font-mono text-xs overflow-x-auto border border-slate-800"></pre>
+                        <div class="flex flex-wrap items-center gap-2 mt-3">
+                            <button onclick="copyGeneratedJson()" class="px-4 py-2 rounded-lg bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-mono font-bold text-xs transition-all flex items-center gap-1.5">
+                                <i class="fa-regular fa-copy"></i>
+                                <span>Copy JSON Snippet</span>
+                            </button>
+                            <button onclick="previewNewFilingLive()" class="px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-white font-mono text-xs border border-slate-700 transition-all flex items-center gap-1.5">
+                                <i class="fa-solid fa-bolt text-amber-400"></i>
+                                <span>Test Live on Page Right Now</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="p-4 bg-slate-100 dark:bg-slate-850 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between text-xs font-mono">
+                <span class="text-slate-500">Tip: Look for <code class="text-emerald-500">const WWW_SITE_DATA</code> near the bottom of <code>index.html</code> to edit permanent data.</span>
+                <button onclick="closeManualModal()" class="px-4 py-2 rounded-lg bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-bold">
+                    Close Manual
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- INSTITUTIONAL FOOTER                       -->
+    <!-- ========================================== -->
+    <footer class="bg-slate-900 text-slate-400 border-t border-slate-800 text-xs font-mono py-10 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded bg-emerald-500 text-slate-950 font-bold flex items-center justify-center">
+                        WWW
+                    </div>
+                    <div>
+                        <span class="text-white font-bold">WE WILL WIN CORPORATION (wewillwin.me)</span>
+                        <p class="text-[11px] text-slate-500">Huy Nguyen • Mechanical Engineer (BSME) &amp; Financial Analyst • Greater Houston, TX</p>
+                    </div>
+                </div>
+                <div class="flex flex-wrap gap-4 text-slate-400">
+                    <a href="#executive-summary" class="hover:text-emerald-400 transition-colors">Executive Summary</a>
+                    <a href="#investor-relations" class="hover:text-emerald-400 transition-colors">Form 10-K / IR</a>
+                    <a href="#engineering-ops" class="hover:text-emerald-400 transition-colors">Engineering Ops</a>
+                    <a href="#form-8k" class="hover:text-emerald-400 transition-colors">Form 8-K Filings</a>
+                    <button onclick="openManualModal()" class="hover:text-amber-400 text-amber-400/90 transition-colors">Owner's Manual</button>
+                </div>
+            </div>
+
+            <div class="pt-6 border-t border-slate-800/80 text-[11px] text-slate-500 leading-relaxed">
+                <p>
+                    <strong>FORWARD-LOOKING STATEMENTS &amp; DISCLOSURE:</strong> "We Will Win (Ticker: WWW)" is a personal corporate accounting framework and creative portfolio project created by Huy Nguyen to manage personal financial statements, career progression, and life events like a privately owned company with 1,000,000 notional shares. Nothing on <code>wewillwin.me</code> constitutes an offer to sell securities or public investment advice. All accounting figures are presented for personal analytical benchmarking.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========================================================= -->
+    <!-- SINGLE-FILE APPLICATION DATA & INTERACTIVE LOGIC          -->
+    <!-- ========================================================= -->
+    <script>
+        /**
+         * ============================================================================
+         * OWNER'S EASY UPDATE CONFIGURATION (EDIT THIS OBJECT TO UPDATE YOUR WEBSITE)
+         * ============================================================================
+         * Huy: To add a new Life Event (Form 8-K) or update your Income Statement numbers,
+         * simply edit the values inside WWW_SITE_DATA below and save index.html!
+         */
+        const WWW_SITE_DATA = {
+            sharesOutstanding: 1000000,
+            bookValueTotal: 102480,
+            q3NetIncome: 10690,
+
+            // Income Statement Line Items (Q3 3-Month Actuals; Annualized 10-K multiplies by 4)
+            incomeStatementQ3: [
+                { section: "OPERATING REVENUES (HUMAN CAPITAL & PORTFOLIO)" },
+                { label: "Field & Reliability Engineering Compensation (W-2 Gross)", amount: 26400.00, isPositive: true },
+                { label: "Employer 401(k) Capital Match & Benefits Accrual", amount: 1580.00, isPositive: true },
+                { label: "Interest, Dividends & Realized Capital Distributions", amount: 470.00, isPositive: true },
+                { label: "TOTAL OPERATING REVENUE", amount: 28450.00, isSubtotal: true },
+
+                { section: "OPERATING EXPENSES (COGS & SG&A)" },
+                { label: "Facility Lease & Utilities (Houston Base Operations)", amount: -4650.00 },
+                { label: "Human Sustenance, Nutrition & Logistics (COGS)", amount: -2450.00 },
+                { label: "Fleet Fuel, Insurance & Routine Maintenance", amount: -1350.00 },
+                { label: "Travel, Discretionary R&D & Relational Capital", amount: -1950.00 },
+                { label: "Depreciation & Amortization (Vehicle & Hardware PPE)", amount: -750.00 },
+                { label: "TOTAL OPERATING EXPENSES", amount: -11150.00, isSubtotal: true },
+
+                { label: "OPERATING INCOME (EBIT)", amount: 17300.00, isHighlight: true },
+
+                { section: "NON-OPERATING ITEMS & TAX PROVISION" },
+                { label: "Unrealized Portfolio Mark-to-Market Gain / (Loss)", amount: 670.00, isPositive: true },
+                { label: "Interest Expense on Equipment Note", amount: -90.00 },
+                { label: "Provision for Federal & FICA Payroll Taxes", amount: -7190.00 },
+                { label: "NET INCOME (GAAP ADDITION TO RETAINED EARNINGS)", amount: 10690.00, isTotal: true }
+            ],
+
+            // Form 8-K Major Life Events & Press Releases
+            lifeEvents8K: [
+                {
+                    category: "CAREER",
+                    itemCode: "Item 5.02 — Transition of Principal Operating Officer",
+                    date: "Q3 2026",
+                    title: "Transitioned to Field Services Engineering (Ethylene Unit Execution)",
+                    summary: "Deployed mechanical engineering capabilities directly into high-criticality Ethylene turnaround and field execution in the Greater Houston petrochemical corridor, pairing API 579 analytical rigor with hands-on field leadership.",
+                    impact: "Operating Revenue Run-Rate Expanded • Field Capabilities +100%"
+                },
+                {
+                    category: "FINANCIAL",
+                    itemCode: "Item 2.02 — Results of Operations and Financial Condition",
+                    date: "Q3 2026",
+                    title: "We Will Win (WWW) Files Q3 Form 10-Q with $102,480 Shareholders' Equity",
+                    summary: "Completed full 3-statement GAAP reconciliation across Balance Sheet, Statement of Operations, and Indirect Cash Flow Statement. Achieved a 37.6% net savings margin ($0.0107 Basic EPS across 1,000,000 authorized shares).",
+                    impact: "Book Value: $0.1025 / Share • Ending Cash: $24,850.00"
+                },
+                {
+                    category: "LIFE",
+                    itemCode: "Item 2.01 — Acquisition or Disposition of Facility Assets",
+                    date: "2026",
+                    title: "Executed New Houston Residential Facility Lease & Commute Optimization",
+                    summary: "Relocated primary Houston living and home-office operations to optimize proximity to Gulf Coast industrial plants, reducing daily fleet depreciation and non-productive transit hours.",
+                    impact: "SG&A Fleet Wear Reduced • Quality of Life Index Upgraded"
+                },
+                {
+                    category: "LIFE",
+                    itemCode: "Item 8.01 — Strategic International Operations & Cultural R&D",
+                    date: "2026",
+                    title: "International Expedition Planning & Cross-Border Capital Budgeting",
+                    summary: "Established dedicated sinking-fund reserves for international travel and cultural exploration in Japan while protecting quarterly 401(k) and brokerage investment targets.",
+                    impact: "Fully Funded via Discretionary R&D Reserve • Zero Debt Issued"
+                },
+                {
+                    category: "CAREER",
+                    itemCode: "Item 8.01 — Core Engineering R&D Milestone",
+                    date: "Prior Filing",
+                    title: "Fixed Equipment Reliability Engineering & Python Workflow Automation",
+                    summary: "Performed API 579 Fitness-For-Service (FFS) assessments, vessel/piping calculations, and built Python tools to streamline mechanical integrity data processing.",
+                    impact: "Long-Term Technical Moat Established"
+                },
+                {
+                    category: "LIFE",
+                    itemCode: "Item 1.01 — Entry into Material Definitive Charter",
+                    date: "Founding Charter",
+                    title: "Graduated LSU (B.S. Mechanical Engineering) & Incorporated WWW Framework",
+                    summary: "Completed Bachelor of Science in Mechanical Engineering at Louisiana State University and relocated to Greater Houston, TX, launching the 1,000,000-share We Will Win personal holding framework.",
+                    impact: "1,000,000 Common Shares Authorized ($0.01 Par Value)"
+                }
+            ]
+        };
+
+        // Current State
+        let currentPeriodMode = 'Q3'; // 'Q3' or 'FY'
+        let current8KFilter = 'ALL';
+
+        /**
+         * Renders the Consolidated Statement of Operations (Income Statement)
+         */
+        function renderIncomeStatement() {
+            const tbody = document.getElementById('incomeStatementBody');
+            const badge = document.getElementById('isPeriodBadge');
+            const multiplier = currentPeriodMode === 'FY' ? 4 : 1;
+            const totalRev = 28450.00 * multiplier;
+
+            badge.textContent = currentPeriodMode === 'FY' ? 'Annualized 10-K (12M Run-Rate)' : 'Q3 10-Q (3M Ended)';
+
+            let html = '';
+            WWW_SITE_DATA.incomeStatementQ3.forEach(item => {
+                if (item.section) {
+                    html += `
+                        <tr class="bg-slate-50 dark:bg-slate-850/70">
+                            <td colspan="3" class="py-2 px-2 font-bold text-slate-600 dark:text-slate-400 uppercase text-[11px] pt-3">${item.section}</td>
+                        </tr>
+                    `;
+                    return;
+                }
+
+                const scaledAmount = item.amount * multiplier;
+                const pctOfRev = ((Math.abs(scaledAmount) / totalRev) * 100).toFixed(1) + '%';
+                const formattedAmount = formatAccountingCurrency(scaledAmount);
+
+                if (item.isTotal) {
+                    const eps = (scaledAmount / WWW_SITE_DATA.sharesOutstanding).toFixed(4);
+                    html += `
+                        <tr class="font-bold text-slate-900 dark:text-white bg-emerald-500/10">
+                            <td class="py-3 pl-2">${item.label}<div class="text-[11px] font-normal text-emerald-600 dark:text-emerald-400">Basic &amp; Diluted EPS (1,000,000 Shares): $${eps} / sh</div></td>
+                            <td class="py-3 text-right accounting-underline text-emerald-600 dark:text-emerald-400">${formattedAmount}</td>
+                            <td class="py-3 text-right text-emerald-600 dark:text-emerald-400">${pctOfRev}</td>
+                        </tr>
+                    `;
+                } else if (item.isSubtotal || item.isHighlight) {
+                    html += `
+                        <tr class="font-semibold bg-slate-50/60 dark:bg-slate-850/40 text-slate-900 dark:text-white">
+                            <td class="py-2 pl-2">${item.label}</td>
+                            <td class="py-2 text-right ${scaledAmount < 0 ? 'text-rose-500' : 'text-emerald-600 dark:text-emerald-400'}">${formattedAmount}</td>
+                            <td class="py-2 text-right text-slate-500">${pctOfRev}</td>
+                        </tr>
+                    `;
+                } else {
+                    html += `
+                        <tr>
+                            <td class="py-2 pl-4 text-slate-700 dark:text-slate-300">${item.label}</td>
+                            <td class="py-2 text-right ${scaledAmount < 0 ? 'text-rose-500' : ''}">${formattedAmount}</td>
+                            <td class="py-2 text-right text-slate-400">${pctOfRev}</td>
+                        </tr>
+                    `;
+                }
+            });
+
+            tbody.innerHTML = html;
+        }
+
+        /**
+         * Formats numbers in institutional GAAP accounting format: ($1,234.00) for negatives
+         */
+        function formatAccountingCurrency(val) {
+            const absFormatted = '$' + Math.abs(val).toLocaleString('en-US', {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            });
+            return val < 0 ? `(${absFormatted})` : absFormatted;
+        }
+
+        /**
+         * Switches between Q3 10-Q and Annualized 10-K view
+         */
+        function switchReportingPeriod(mode) {
+            currentPeriodMode = mode;
+            const btnQ3 = document.getElementById('periodBtn-Q3');
+            const btnFY = document.getElementById('periodBtn-FY');
+
+            if (mode === 'Q3') {
+                btnQ3.className = 'px-3 py-1.5 rounded-lg bg-emerald-500 text-slate-950 font-bold transition-all';
+                btnFY.className = 'px-3 py-1.5 rounded-lg text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all';
+            } else {
+                btnFY.className = 'px-3 py-1.5 rounded-lg bg-emerald-500 text-slate-950 font-bold transition-all';
+                btnQ3.className = 'px-3 py-1.5 rounded-lg text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all';
+            }
+
+            renderIncomeStatement();
+            // Switch to Income Statement tab automatically so user sees the update immediately
+            switchIRTab('tab-income-bs');
+        }
+
+        /**
+         * Switches between the 3 Investor Relations Tabs
+         */
+        function switchIRTab(tabId) {
+            document.querySelectorAll('.ir-tab-panel').forEach(panel => {
+                panel.classList.add('hidden');
+            });
+            document.getElementById(tabId).classList.remove('hidden');
+
+            document.querySelectorAll('.ir-tab-btn').forEach(btn => {
+                btn.className = 'ir-tab-btn inline-flex items-center gap-2 px-4 py-3 border-b-2 border-transparent text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 font-medium transition-all';
+            });
+
+            const activeBtn = document.getElementById('btn-' + tabId);
+            if (activeBtn) {
+                activeBtn.className = 'ir-tab-btn inline-flex items-center gap-2 px-4 py-3 border-b-2 border-emerald-500 text-emerald-600 dark:text-emerald-400 font-semibold transition-all';
+            }
+        }
+
+        /**
+         * Updates the 1,000,000 Share Valuation Simulator
+         */
+        function updateShareValuation() {
+            const peMultiple = parseFloat(document.getElementById('peSlider').value);
+            document.getElementById('peMultipleLabel').textContent = `${peMultiple.toFixed(1)}x Annualized Earnings`;
+
+            const annualizedNetIncome = WWW_SITE_DATA.q3NetIncome * 4; // $42,760/yr
+            const impliedMarketCap = annualizedNetIncome * peMultiple;
+            const impliedSharePrice = impliedMarketCap / WWW_SITE_DATA.sharesOutstanding;
+
+            document.getElementById('impliedSharePrice').textContent = '$' + impliedSharePrice.toFixed(4);
+            document.getElementById('impliedMarketCap').textContent = '$' + Math.round(impliedMarketCap).toLocaleString('en-US');
+        }
+
+        /**
+         * Renders Form 8-K Life Events & Press Releases
+         */
+        function render8KFilings() {
+            const container = document.getElementById('filings8KContainer');
+            const filtered = WWW_SITE_DATA.lifeEvents8K.filter(item =>
+                current8KFilter === 'ALL' ? true : item.category === current8KFilter
+            );
+
+            const badgeMap = {
+                CAREER: { label: 'CAREER OPS', classes: 'bg-amber-500/15 text-amber-600 dark:text-amber-400 border-amber-500/30' },
+                LIFE: { label: 'LIFE MILESTONE', classes: 'bg-blue-500/15 text-blue-600 dark:text-blue-400 border-blue-500/30' },
+                FINANCIAL: { label: 'FINANCIAL FILING', classes: 'bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border-emerald-500/30' }
+            };
+
+            container.innerHTML = filtered.map(filing => {
+                const badge = badgeMap[filing.category] || badgeMap.LIFE;
+                return `
+                    <article class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 shadow-sm hover:border-emerald-500/50 transition-all flex flex-col justify-between">
+                        <div>
+                            <div class="flex flex-wrap items-center justify-between gap-2 mb-3 font-mono text-xs">
+                                <span class="px-2.5 py-0.5 rounded border font-semibold ${badge.classes}">
+                                    FORM 8-K • ${badge.label}
+                                </span>
+                                <span class="text-slate-500">${filing.date}</span>
+                            </div>
+                            <div class="text-xs font-mono text-slate-500 dark:text-slate-400 mb-1">${filing.itemCode}</div>
+                            <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white mb-2">
+                                ${filing.title}
+                            </h3>
+                            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                                ${filing.summary}
+                            </p>
+                        </div>
+                        <div class="mt-5 pt-3.5 border-t border-slate-200/80 dark:border-slate-800 flex items-center justify-between text-xs font-mono">
+                            <span class="text-slate-500">Material Impact:</span>
+                            <span class="text-emerald-600 dark:text-emerald-400 font-semibold text-right">${filing.impact}</span>
+                        </div>
+                    </article>
+                `;
+            }).join('');
+        }
+
+        /**
+         * Filters Form 8-K cards by category
+         */
+        function filter8K(category) {
+            current8KFilter = category;
+            document.querySelectorAll('.filter-8k-btn').forEach(btn => {
+                if (btn.getAttribute('data-filter') === category) {
+                    btn.className = 'filter-8k-btn px-3 py-1.5 rounded-lg bg-emerald-500 text-slate-950 font-bold transition-all';
+                } else {
+                    btn.className = 'filter-8k-btn px-3 py-1.5 rounded-lg bg-slate-200 dark:bg-slate-850 text-slate-700 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-800 transition-all';
+                }
+            });
+            render8KFilings();
+        }
+
+        /**
+         * Beginner's Owner Manual Modal & JSON Snippet Generator
+         */
+        function openManualModal() {
+            updateGeneratorSnippet();
+            document.getElementById('manualModal').classList.remove('hidden');
+        }
+
+        function closeManualModal() {
+            document.getElementById('manualModal').classList.add('hidden');
+        }
+
+        function getGeneratorObject() {
+            return {
+                category: document.getElementById('genCategory').value,
+                itemCode: document.getElementById('genItemCode').value,
+                date: document.getElementById('genDate').value,
+                title: document.getElementById('genTitle').value,
+                summary: document.getElementById('genSummary').value,
+                impact: document.getElementById('genImpact').value
+            };
+        }
+
+        function updateGeneratorSnippet() {
+            const obj = getGeneratorObject();
+            const formatted = JSON.stringify(obj, null, 4) + ',';
+            document.getElementById('generatedJsonCode').textContent = formatted;
+        }
+
+        function copyGeneratedJson() {
+            const text = document.getElementById('generatedJsonCode').textContent;
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+
+            const badge = document.getElementById('copyConfirmBadge');
+            badge.classList.remove('hidden');
+            setTimeout(() => badge.classList.add('hidden'), 2500);
+        }
+
+        function previewNewFilingLive() {
+            const newObj = getGeneratorObject();
+            WWW_SITE_DATA.lifeEvents8K.unshift(newObj);
+            filter8K('ALL');
+            closeManualModal();
+            document.getElementById('form-8k').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        /**
+         * Light / Dark Mode Theme Switcher
+         */
+        function toggleTheme() {
+            const htmlEl = document.documentElement;
+            const icon = document.getElementById('themeIcon');
+            if (htmlEl.classList.contains('dark')) {
+                htmlEl.classList.remove('dark');
+                icon.className = 'fa-solid fa-moon text-slate-700';
+            } else {
+                htmlEl.classList.add('dark');
+                icon.className = 'fa-solid fa-sun text-amber-400';
+            }
+        }
+
+        /**
+         * Mobile Navigation Menu Toggle
+         */
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Initialize Portal on Load
+        window.addEventListener('DOMContentLoaded', () => {
+            renderIncomeStatement();
+            updateShareValuation();
+            render8KFilings();
+        });
+    </script>
+</body>
+</html>
